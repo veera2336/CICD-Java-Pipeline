@@ -1,0 +1,21 @@
+version: 0.0
+os: linux
+
+files:
+  - source: /Dockerfile
+    destination: /opt
+
+hooks:
+  BeforeInstall:
+    - location: scripts/install_dependencies.sh
+      timeout: 300
+      runas: root 
+
+    - location: scripts/download_warfile.sh
+      timeout: 300
+      runas: root 
+
+  ApplicationStart:
+    - location: scripts/run_docker_commands.sh
+      timeout: 300
+      runas: root
