@@ -1,10 +1,10 @@
 version: 0.0
 os: linux
-files:
-  - source: /target/login##1.0.war
-    destination: /tmp/codedeploy-deployment-staging-area/
-  - source: /scripts/configure_http_port.xsl
-    destination: /tmp/codedeploy-deployment-staging-area/
+#files:
+ # - source: /target/login##1.0.war
+ #   destination: /tmp/codedeploy-deployment-staging-area/
+ # - source: /scripts/configure_http_port.xsl
+ #   destination: /tmp/codedeploy-deployment-staging-area/
 hooks:
   ApplicationStop:
     - location: scripts/stop_application
